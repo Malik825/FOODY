@@ -27,6 +27,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             font-weight: 400;
+            background:#f1f1f1;
             overflow-x: hidden !important;
         }
         
@@ -122,6 +123,7 @@
             font-size: 32px;
             font-family:'Great Vibes', "Poppins", sans-serif;
             font-weight: 700;
+            text-transform: capitalize !important;
         }
         
         .navigation ul {
@@ -284,10 +286,15 @@
             align-items: center;
             min-height: 100vh;
             margin-top: 1.5rem;
+            justify-content: center;
+            text-align: center;
         }
         
         .heroText {
-            color: #fff;
+            width:100%;
+           color: #fff;
+            flex: 0 0 100%;
+            text-align: center;
         }
         
         .heroText p {
@@ -298,15 +305,18 @@
         
         .heroText h2 {
             letter-spacing: 1.2px;
-            font-size: 38px;
-            font-weight: 500;
-            width: 50%;
-            margin: .6rem 0 0.85rem;
+            font-size: 48px;
+            font-weight: 700;
+            width: 100%;
+            margin: .6rem auto 0.85rem;
             color: #fff;
         }
-        
+        .btnItem{
+
+        }
         .heroText h2>span {
             color: var(--primary);
+            font-family: 'Great Vibes', sans-serif;
         }
         
         .heroText h3 {
@@ -322,7 +332,9 @@
         
         .btnItem {
             display: flex;
-            margin:1.5rem 0 0;
+        
+            justify-content: center;
+        
         }
         
         .btnIcon,
@@ -832,6 +844,7 @@
             text-align: center;
             width: 80%;
             display: flex;
+            /* background: #fff; */
             flex-wrap: wrap;
         }
         
@@ -956,7 +969,13 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: var(--boxShadow);
             padding: 20px;
+            background:#fff;
             border-radius: 5px;
+transition: .4s ease;
+}
+.food-inner:hover{
+            transition: .4s ease;
+            box-shadow: 0 0 2px #333;
         }
         
         .food-image-text {
@@ -1101,6 +1120,7 @@
             text-align: center;
             border-bottom: 3px solid var(--primary);
             position: relative;
+        
         }
         
         .chef-inner .chef-image {
@@ -1183,6 +1203,7 @@
             padding: .9rem;
             box-shadow: var(--boxShadow);
             transition: .5s ease;
+        background:#fff;
             cursor: pointer;
         }
         
@@ -1440,10 +1461,12 @@
             box-shadow: var(--boxShadow);
             margin-top: 1.5rem;
             border-radius:5px;
+              background:#fff;
         }
         
         .review-inner {
             position: relative;
+      
         }
         
         .price-section .row {
@@ -1557,6 +1580,8 @@
             box-shadow: var(--boxShadow);
             position: relative;
             width: 100%;
+            background: #fff;
+            border-radius: .4rem;
         }
         
         .togglers {
@@ -1564,13 +1589,26 @@
         }
         
         .price-icon {
-            width: 65px;
+            width: 70px;
             margin: 0 auto;
-            height: 65px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: var(--primary);
+            border-radius: 50%;
+            position: relative;
+        }
+        .price-icon::before{
+            position: absolute;
+            content: '';
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+width: 80%;
+height: 80%;
+border:4px solid #fff;
+border-radius: 50%;
         }
         
         .price-icon .fa-4x {
@@ -1602,7 +1640,17 @@
             height: 66px;
             line-height: 66px;
         }
-        
+        .price-inner .btn::after{
+                        position: absolute;
+            content: '';
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+width: 97%;
+height: 80%;
+border:4px solid #fff;
+/* border-radius: 50%; */
+        }
         .price-inner .btn:hover:before {
             background: linear-gradient(90deg, #161122 20px, transparent 1%) center, linear-gradient(#161122 20px, transparent 1%) center, rgba(255, 255, 255, 1);
             background-size: 21px 21px;
@@ -1655,6 +1703,7 @@
             padding: 1.2rem;
             border-top: 3px solid var(--primary);
             position: relative;
+            background: #fff;
             overflow: hidden;
         }
         
@@ -2217,12 +2266,13 @@
             .hideDisplay {
                 display: block;
             }
+       
             .menu-tabs a {
                 font-size: 12px;
             }
             .menu-tabs a>i {
                 font-size: 20px;
-                color: #fff;
+                /* color: #fff; */
             }
             .food-inner {
                 padding: 8px;
@@ -2382,6 +2432,7 @@
             .review-inner {
                 width: 100%;
                 position: relative;
+                background:#fff;
             }
             .owl-nav {
                 top: calc(100% + 20px);
@@ -2551,7 +2602,7 @@
                 left: 59%;
             }
             .heroText {
-                padding-left: 2rem;
+        
             }
             .heroText h2 {
                 font-size: 25px;
