@@ -68,7 +68,15 @@
             width: 8px;
         }
         
+         .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        
          ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+        }
+        .modal-body::-webkit-scrollbar-thumb{
+            /* display: none; */
             background: var(--primary);
         }
         
@@ -891,7 +899,7 @@
         .menu #row {
             position: relative;
             /* overflow: hidden; */
-            min-height: 100vh;
+            min-height: 110vh;
         }
         
         .menu .food {
@@ -1022,6 +1030,7 @@
             background: linear-gradient(90deg, #161122 20px, transparent 1%) center, linear-gradient(#161122 20px, transparent 1%) center, rgba(255, 255, 255, 1);
             background-size: 21px 21px;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
         }
@@ -2075,7 +2084,9 @@
         button.owl-next {
             background: transparent !important;
         }
-        
+        .navigation ul li.showOnMobile{
+            display:none;
+        }
         @media (max-width:1100px) {
             .toggler {
                 width: 50px;
@@ -2123,13 +2134,22 @@
                 justify-content: center;
             }
             .navigation ul li {
+                /* background:#f0f; */
                 padding: 0px 1rem !important;
+                height: 50px;
             }
+              .navigation ul li.showOnMobile,
             .navigation ul li.magic {
                 display: block !important;
             }
+            .navigation .subBox{
+                display:none;
+            }
             .navigation ul li a {
                 font-size: .8rem;
+            }
+            .navigation ul li .hide{
+                display: none;
             }
             .subMenu .fa-angle-down,
             .subMenu {
@@ -2261,6 +2281,45 @@
             .menu {
                 margin-bottom: 36rem !important;
             }
+            
+        .form-header {
+            position: relative;
+    
+            top: 0px !important;
+            width: 100%;
+            right: 0px;
+            left: 0;
+            text-align: right;
+            z-index: 222;
+        }
+        .tableContent .social-lines{
+            display: none !important
+        }
+        .tableContent{
+            overflow-y: auto;
+        }
+       .form-header h2 {
+            font-size: 18px !important;
+        }
+        
+        .form-header h4 {
+            font-size: 15px !important;
+            color: var(--primary)
+        }
+        
+            .tableContent .input-group,
+        .tableContent .input-group {
+            height:35px;
+            margin:0 0 10px !important;
+        }
+        .tableContent .btn{
+            display: block !important;
+            width:100%;
+        }
+            .tableContent .input-group select,
+        .tableContent .input-group input{
+            padding: 10px !important;
+        }
             .reviewRight {
                 padding-left: 0rem !important;
             }
@@ -2313,7 +2372,7 @@
                 height: 17rem;
             }
             .numbers {
-                margin-top: -15rem;
+                /* margin-top: -15rem; */
             }
             .leftReview,
             .reviewRight {
@@ -2430,6 +2489,9 @@
         }
         
         @media (max-width:457px) {
+              .numbers{
+                margin-top:15rem !important;
+              }
             .review-content {
                 padding: 10px !important;
             }
@@ -2560,9 +2622,7 @@
                 border-top: 3px solid transparent;
                 position: relative;
             }
-            .numbers {
-                margin-top: 10rem;
-            }
+       
        
             .navigation ul li a {
                 font-size: 12px;
@@ -2578,7 +2638,7 @@
         
         .tableContent {
             position: fixed;
-            width: 50%;
+            width: 100%;
             height: 100vh;
             background: #161122;
             z-index: 999444;
@@ -2608,13 +2668,14 @@
         .tableContent .input-group select,
         .tableContent .input-group input {
             border: none;
-            border-bottom: 1px solid rgba(255, 255, 255, .15);
+            border-bottom: 1px solid rgba(255, 255, 255, .25);
             width: 100%;
             height: 100%;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
             background: transparent !important;
             background-color: #161122 !important;
+        color: #fff;
         }
         
         .tableContent .input-group input {
@@ -2734,7 +2795,7 @@
             align-items: center;
             transition: .45s ease;
             justify-content: center;
-            /* overflow-y: scroll; */
+           
             transform: translateX(120%);
         }
         
@@ -2753,13 +2814,15 @@
         }
         
         .modal-body {
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             width: 100% !important;
             display: block;
+ overflow-y: scroll;
+            height:400px;
             /* background-color: #f00; */
         }
         
-        .tableContent .input-group {
+        .input-group:not(.search .input-group) {
             width: 100%;
             display: block;
             display: flex;
@@ -2805,20 +2868,24 @@
         td>h2 {
             font-size: 1rem;
             color: #fff;
+            display: flex;
+            align-items: center;
+            margin-right: .4rem;
         }
         
         .modal-header {
             display: flex;
             justify-content: space-between;
             top: 0;
-            position: absolute;
+            position: fixed;
             width: 100%;
             align-items: center;
             border-bottom: 1px solid rgba(255, 255, 255, .25);
-            padding: .2rem .8rem;
+            padding: .1rem .4rem;
             left: 0;
+            z-index: 22;
             color: #fff;
-            /* background: var(--primary); */
+            background:#161122;
         }
         
         .modal-header h5 {
@@ -2851,6 +2918,7 @@
             display: block;
             width: 100%;
             cursor: pointer;
+            height:40px;
         }
         
         .modal-footer button:nth-child(2) {
@@ -3028,4 +3096,8 @@
             .price h3 {
                 font-size: .8rem;
             }
+           .tableContent {
+          padding: 1rem !important;
+        }
+        
         }
