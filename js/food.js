@@ -6,6 +6,27 @@ allMenuTabs.forEach(tab => tab.addEventListener('click', e => {
     tab.classList.add('new')
 }))
 $(() => {
+    $(window).on("load", function() {
+    //preloader
+
+    $('.preloader').fadeOut(1000);
+    // home section slide show
+
+    let slideIndex = $('.slide.active').index();
+    const slideLen = $('.slide').length;
+
+    function slideShow(KirchieSpy) {
+        $('.slide').removeClass('active').eq(slideIndex).addClass("active");
+        if (slideIndex == slideLen - 1) {
+            slideIndex = 0;
+        } else {
+            slideIndex++;
+        }
+        setTimeout(slideShow, 3000);
+    }
+    slideShow();
+  
+})
     $('.openSearch').click((kirchiespy) => {
         kirchiespy.preventDefault();
         $('.search').toggleClass('active');
@@ -48,7 +69,7 @@ $(() => {
         time: 1000,
         loop: true
     });
-    $('.hero .container').ripples({
+    $('.home-section .rippled').ripples({
         dropRadius: 12,
         perturbance: 0.001,
     });
