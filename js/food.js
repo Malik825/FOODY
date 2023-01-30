@@ -5,6 +5,26 @@ allMenuTabs.forEach(tab => tab.addEventListener('click', e => {
     })
     tab.classList.add('new')
 }))
+const header = document.querySelector('.home-section');
+const scrollBox = document.querySelector(".scrollTop");
+const scrollIcon = document.querySelector('.scrollTopIcon');
+scrollIcon.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
+
+})
+window.addEventListener('scroll', () => {
+    const hHeight = header.getBoundingClientRect().height;
+    const scrolY = window.scrollY;
+    if (scrolY > hHeight) {
+        scrollBox.style.opacity = "1";
+    } else {
+        scrollBox.style.opacity = "0"
+    }
+})
 $(() => {
     $(window).on("load", function() {
     //preloader
